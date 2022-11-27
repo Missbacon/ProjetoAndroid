@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -24,26 +25,26 @@
         android:src="@drawable/ic_user"
         app:layout_constraintStart_toStartOf="@id/containerUser"
         app:layout_constraintEnd_toEndOf="@id/containerUser"
-        app:layout_constraintTop_toTopOf="@id/containerUser" _
+        app:layout_constraintTop_toTopOf="@id/containerUser"
         app:layout_constraintBottom_toBottomOf="@id/containerUser"/>
 
     <TextView
-        android:id="@+id/bem_vindo"
+        android:id="@+id/text_bemVindo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Bem vindo, Usuário"
         android:textSize="20sp"
-        android:text="@string/home"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/usuario"
-        android:layout_marginTop="40dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/usuario" />
 
     <View
         android:id="@+id/container"
         style="@style/ContainerComponents"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bem_vindo"
+        app:layout_constraintTop_toBottomOf="@id/text_bemVindo"
         android:layout_marginTop="90dp"
         />
 

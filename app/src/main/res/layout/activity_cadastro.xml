@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -22,7 +23,7 @@
         android:layout_marginTop="100dp"/>
 
     <EditText
-        android:id="@+id/nome_completo"
+        android:id="@+id/editText_nome"
         style="@style/Edit_Text"
         android:layout_marginTop="48dp"
         android:hint="Nome"
@@ -33,18 +34,18 @@
         app:layout_constraintTop_toBottomOf="@id/tile_conta" />
 
     <EditText
-        android:id="@+id/nascimento"
+        android:id="@+id/editText_dataNasc"
         style="@style/Edit_Text"
         android:layout_marginTop="12dp"
         android:hint="Data de nascimento"
         android:inputType="date"
         android:textColorHint="@color/lilasclaro"
-        app:layout_constraintEnd_toEndOf="@id/nome_completo"
-        app:layout_constraintStart_toStartOf="@id/nome_completo"
-        app:layout_constraintTop_toBottomOf="@id/nome_completo" />
+        app:layout_constraintEnd_toEndOf="@id/editText_nome"
+        app:layout_constraintStart_toStartOf="@id/editText_nome"
+        app:layout_constraintTop_toBottomOf="@id/editText_nome" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/editText_email"
         style="@style/Edit_Text"
         android:layout_marginTop="12dp"
         android:hint="email"
@@ -52,10 +53,10 @@
         android:textColorHint="@color/lilasclaro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nascimento" />
+        app:layout_constraintTop_toBottomOf="@id/editText_dataNasc" />
 
     <EditText
-        android:id="@+id/endereço"
+        android:id="@+id/editText_endereco"
         style="@style/Edit_Text"
         android:layout_marginTop="12dp"
         android:hint="endereço"
@@ -63,7 +64,7 @@
         android:textColorHint="@color/lilasclaro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/email"  />
+        app:layout_constraintTop_toBottomOf="@id/editText_email"  />
 
     <TextView
         android:id="@+id/termo"
@@ -78,7 +79,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/endereço" />
+        app:layout_constraintTop_toBottomOf="@id/editText_endereco" />
 
     <CheckBox
         android:id="@+id/Termos_de_uso"
@@ -88,10 +89,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/endereço" />
+        app:layout_constraintTop_toBottomOf="@id/editText_endereco" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/cadastrar"
+        android:id="@+id/button_cadastrar"
         style="@style/Button"
         android:layout_width="324dp"
         android:layout_height="64dp"
