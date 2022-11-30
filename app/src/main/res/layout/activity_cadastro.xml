@@ -20,12 +20,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="50dp"/>
 
     <EditText
         android:id="@+id/editText_nome"
         style="@style/Edit_Text"
         android:layout_marginTop="48dp"
+        android:textColor="@color/black"
         android:hint="Nome"
         android:inputType="textPersonName"
         android:textColorHint="@color/lilasclaro"
@@ -38,6 +39,7 @@
         style="@style/Edit_Text"
         android:layout_marginTop="12dp"
         android:hint="Data de nascimento"
+        android:textColor="@color/black"
         android:inputType="date"
         android:textColorHint="@color/lilasclaro"
         app:layout_constraintEnd_toEndOf="@id/editText_nome"
@@ -49,11 +51,23 @@
         style="@style/Edit_Text"
         android:layout_marginTop="12dp"
         android:hint="email"
+        android:textColor="@color/black"
         android:inputType="textEmailAddress"
         android:textColorHint="@color/lilasclaro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editText_dataNasc" />
+    <EditText
+        android:id="@+id/senha"
+        style="@style/Edit_Text"
+        android:layout_marginTop="12dp"
+        android:hint="Senha"
+        android:textColor="@color/black"
+        android:inputType="numberPassword"
+        android:textColorHint="@color/lilasclaro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editText_email" />
 
     <EditText
         android:id="@+id/editText_endereco"
@@ -61,10 +75,11 @@
         android:layout_marginTop="12dp"
         android:hint="endereço"
         android:inputType="text"
+        android:textColor="@color/black"
         android:textColorHint="@color/lilasclaro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editText_email"  />
+        app:layout_constraintTop_toBottomOf="@id/senha"  />
 
     <TextView
         android:id="@+id/termo"
