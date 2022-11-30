@@ -16,6 +16,7 @@ public class Tela_carregamento extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_carregamento);
         progressBar = findViewById(R.id.progressBar_carregamento);
+        getSupportActionBar().hide();
 
         countDownTimer.start();
 

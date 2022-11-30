@@ -10,5 +10,6 @@ public class Resultado_busca extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultado_busca);
+        getSupportActionBar().hide();
     }
 }

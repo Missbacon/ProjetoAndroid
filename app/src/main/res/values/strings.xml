@@ -6,4 +6,5 @@
     <string name="Termo">Li e concordo com os termos de uso.</string>
     <string name="cadastrar"> Cadastrar</string>
     <string name="home">Bem vindo Usuario</string>
+    <string name="deslogar">Deslogar</string>
 </resources>

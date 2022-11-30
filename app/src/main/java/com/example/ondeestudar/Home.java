@@ -20,6 +20,7 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        getSupportActionBar().hide();
 
         text_bemVindo = findViewById(R.id.text_bemVindo);
         image_linkedin = findViewById(R.id.image_linkedin);
