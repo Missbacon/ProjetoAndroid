@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tela_carregamento"
+    tools:context=".Tela_carregamento"
     android:background="@drawable/background">
 
     <ImageView
@@ -19,8 +19,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/progressBar_carregamento"
         style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
+        android:progress="1"
         android:layout_width="273dp"
         android:layout_height="37dp"
         app:layout_constraintEnd_toEndOf="@id/logo_inicial"

@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class tela_carregamento extends AppCompatActivity {
+public class Resultado_busca extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_carregamento);
+        setContentView(R.layout.activity_resultado_busca);
     }
 }

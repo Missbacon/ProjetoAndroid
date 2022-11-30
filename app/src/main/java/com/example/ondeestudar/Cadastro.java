@@ -15,7 +15,7 @@ import java.util.Random;
 
 public class Cadastro extends AppCompatActivity {
 
-    EditText editText_nome, editText_dataNasc, editText_email, editText_endereco;
+    EditText editText_nome, editText_dataNasc, editText_email, editText_password, editText_endereco;
     Button button_cadastrar;
     Usuario usuario = new Usuario();
     DAO bdHelper = new DAO(this);
@@ -32,6 +32,7 @@ public class Cadastro extends AppCompatActivity {
         editText_nome = findViewById(R.id.editText_nome);
         editText_dataNasc = findViewById(R.id.editText_dataNasc);
         editText_email = findViewById(R.id.editText_email);
+        editText_password = findViewById(R.id.editText_password);
         editText_endereco = findViewById(R.id.editText_endereco);
         button_cadastrar = findViewById(R.id.button_cadastrar);
         button_cadastrar.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +45,7 @@ public class Cadastro extends AppCompatActivity {
                     usuario.setData_nasc(editText_dataNasc.getText().toString());
                     usuario.setEmail(editText_email.getText().toString());
                     usuario.setEndereco(editText_endereco.getText().toString());
-                    usuario.setPassword("12345678");
+                    usuario.setPassword(editText_password.getText().toString());
 
                     try{
                         bdHelper.cadastrarUsuario(usuario);
