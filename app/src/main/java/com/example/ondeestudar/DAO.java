@@ -6,6 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 
 import java.util.ArrayList;
@@ -46,7 +47,7 @@ public class DAO extends SQLiteOpenHelper {
                 "ead INTEGER NOT NULL, " +
                 "semi_presencial INTEGER NOT NULL, " +
                 "tel_instituicao TEXT NOT NULL, " +
-                "site_instituicao TEXT NOT NULL);";
+                "site_instituicao TEXT NOT NULL, UNIQUE(curso, campus, instituicao));";
 
         bd.execSQL(usuarioTB);
         bd.execSQL(cursoTB);
@@ -75,7 +76,7 @@ public class DAO extends SQLiteOpenHelper {
         dados.put("curso", curso.getCurso());
         dados.put("instituicao", curso.getInstituicao());
         dados.put("campus", curso.getCampus());
-        dados.put("endereco", curso.getEndereco_campus());
+        dados.put("endereco_campus", curso.getEndereco_campus());
         dados.put("mensalidade", curso.getMensalidade());
         dados.put("diurno", curso.isDiurno());
         dados.put("noturno", curso.isNoturno());
@@ -91,11 +92,11 @@ public class DAO extends SQLiteOpenHelper {
 
     public ArrayList<Usuario> getUsuario(String email, String password){
         SQLiteDatabase bd = this.getWritableDatabase();
-        String sql = "SELECT * FROM usuario WHERE email='" + email + "' AND password='" + password + "';";
+        String sql = "SELECT * FROM usuario WHERE email='" + email + "' COLLATE NOCASE AND password='" + password + "';";
         Cursor result = bd.rawQuery(sql, null);
         ArrayList<Usuario> logado = new ArrayList<>();
 
-        if(result.getCount() > 0) {
+        if(result.getCount() == 1) {
             result.moveToFirst();
             Usuario usuario = new Usuario();
             usuario.setId(result.getInt(0));
@@ -116,34 +117,50 @@ public class DAO extends SQLiteOpenHelper {
         return logado;
     }
 
-    public ArrayList<Curso> getCursos(String nome_curso){
+    public ArrayList<Curso> getCursos(String cursoInstituicao){
+
         SQLiteDatabase bd = this.getWritableDatabase();
-        String sql = "SELECT * FROM curso WHERE curso=" + nome_curso + ";";
+        cursoInstituicao = "%" + cursoInstituicao + "%";
+        String sql = "SELECT * FROM curso WHERE curso LIKE " + '"' + cursoInstituicao + '"' + " COLLATE NOCASE OR instituicao LIKE " + '"' + cursoInstituicao + '"' + " COLLATE NOCASE;";
         Cursor result = bd.rawQuery(sql, null);
         ArrayList<Curso> cursos = new ArrayList<>();
 
-        result.moveToFirst();
-        while(result.moveToNext()){
-            Curso curso = new Curso();
-            curso.setId(result.getInt(0));
-            curso.setCurso(result.getString(1));
-            curso.setInstituicao(result.getString(2));
-            curso.setCampus(result.getString(3));
-            curso.setEndereco_campus(result.getString(4));
-            curso.setMensalidade(result.getFloat(5));
-            curso.setDiurno(getBoolean(result.getInt(6)));
-            curso.setNoturno(getBoolean(result.getInt(7)));
-            curso.setPresencial(getBoolean(result.getInt(8)));
-            curso.setEad(getBoolean(result.getInt(9)));
-            curso.setSemi_presencial(getBoolean(result.getInt(10)));
-            curso.setTel_instituicao(result.getString(11));
-            curso.setSite_instituicao(result.getString(12));
+        if(result.getCount() > 0){
 
-            cursos.add(curso);
+            result.moveToFirst();
+
+            do{
+                Curso curso = new Curso();
+                curso.setId(result.getInt(0));
+                curso.setCurso(result.getString(1));
+                curso.setInstituicao(result.getString(2));
+                curso.setCampus(result.getString(3));
+                curso.setEndereco_campus(result.getString(4));
+                curso.setMensalidade(result.getDouble(5));
+                curso.setDiurno(getBoolean(result.getInt(6)));
+                curso.setNoturno(getBoolean(result.getInt(7)));
+                curso.setPresencial(getBoolean(result.getInt(8)));
+                curso.setEad(getBoolean(result.getInt(9)));
+                curso.setSemi_presencial(getBoolean(result.getInt(10)));
+                curso.setTel_instituicao(result.getString(11));
+                curso.setSite_instituicao(result.getString(12));
+
+                cursos.add(curso);
+            }
+            while (result.moveToNext());
+
+            bd.close();
+            return cursos;
         }
-        bd.close();
-        return cursos;
+        else{
+            bd.close();
+            cursos=null;
+            return cursos;
+        }
+
     }
+
+
 
     public boolean getBoolean(int bool) {
         if (bool == 0) {

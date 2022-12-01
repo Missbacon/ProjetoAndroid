@@ -1,6 +1,8 @@
 package com.example.ondeestudar;
 
-public class Curso {
+import java.io.Serializable;
+
+public class Curso implements Serializable {
 
     private int id;
     private String curso;
@@ -8,7 +10,7 @@ public class Curso {
     private String campus;
     private String descricao;
     private String endereco_campus;
-    private Float mensalidade;
+    private Double mensalidade;
     private boolean diurno;
     private boolean noturno;
     private boolean presencial;
@@ -16,6 +18,12 @@ public class Curso {
     private boolean semi_presencial;
     private String tel_instituicao;
     private String site_instituicao;
+
+    public String toString(){
+
+        return curso.toString() + " - " + instituicao.toString();
+
+    }
 
     public int getId() {
         return id;
@@ -65,11 +73,11 @@ public class Curso {
         this.endereco_campus = endereco_campus;
     }
 
-    public Float getMensalidade() {
+    public Double getMensalidade() {
         return mensalidade;
     }
 
-    public void setMensalidade(Float mensalidade) {
+    public void setMensalidade(Double mensalidade) {
         this.mensalidade = mensalidade;
     }
 

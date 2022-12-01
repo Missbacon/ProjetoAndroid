@@ -8,7 +8,7 @@
     android:background="@drawable/background">
 
     <TextView
-        android:id="@+id/Nome_instituição"
+        android:id="@+id/textView_instituicao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" Nome da instituição de ensino"
@@ -20,35 +20,41 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/nome_curso"
+        android:id="@+id/textView_curso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="Nome do curso"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/Nome_instituição"
+        app:layout_constraintTop_toBottomOf="@id/textView_instituicao"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteX="29dp" />
 
     <TextView
-        android:id="@+id/descrição"
+        android:id="@+id/textView_descricao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:layout_marginTop="48dp"
         android:text="Descrição do curso/grade"
-        app:layout_constraintTop_toBottomOf="@+id/nome_curso"
+        app:layout_constraintTop_toBottomOf="@+id/textView_curso"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
          />
 
     <ImageView
-        android:layout_width="55dp"
-        android:layout_height="9dp"
-        android:layout_marginTop="96dp"
-        app:layout_constraintTop_toBottomOf="@id/descrição"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:id="@+id/imageView_minimap"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="128dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_descricao" />
 
 
 
