@@ -101,7 +101,7 @@ public class Home extends AppCompatActivity {
         image_podcasts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://open.spotify.com/search/tecnologia/podcastAndEpisodes"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.zendesk.com.br/blog/podcasts-sobre-tecnologia/"));
                 startActivity(browserIntent);
             }
         });
@@ -109,7 +109,7 @@ public class Home extends AppCompatActivity {
         image_biblioteca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.amazon.com.br/Livros-Computacao-Informatica-Midias-Digitais/b?ie=UTF8&node=7842641011"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Missbacon/books/tree/main/books"));
                 startActivity(browserIntent);
             }
         });
@@ -117,7 +117,7 @@ public class Home extends AppCompatActivity {
         image_calendario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://vestibular.mundoeducacao.uol.com.br/agenda"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://vestibulares2022.com.br/vestibular-fatec-2022/"));
                 startActivity(browserIntent);
             }
         });

@@ -14,4 +14,6 @@
     <color name="azul">#0F15D1</color>
     <color name="fundo">#F1F5F4</color>
     <color name="off">#B6B9C1</color>
+    <color name="Branco">#fff6c7</color>
+    <color name="vermelho">#FF6347</color>
 </resources>
