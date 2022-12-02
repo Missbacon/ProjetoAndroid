@@ -31,7 +31,7 @@ public class Pagina_curso extends AppCompatActivity {
 
         textView_instituicao.setText(cursoSelecionado.getInstituicao());
         textView_curso.setText(cursoSelecionado.getCurso());
-        descricao = "MAIS DETALHES - Campus: " + cursoSelecionado.getCampus() + ", Endereço: " + cursoSelecionado.getEndereco_campus() + ", Valor mensalidade: R$" + cursoSelecionado.getMensalidade() + ", Períodos: Diurno(" + getBoolean(cursoSelecionado.isDiurno()) + ") - Noturno(" + getBoolean(cursoSelecionado.isNoturno()) + "), Modalidades: Presencial(" + getBoolean(cursoSelecionado.isPresencial()) + ") - EAD(" + getBoolean(cursoSelecionado.isEad()) + ") - Semi-presencial(" + getBoolean(cursoSelecionado.isSemi_presencial()) + "), Contatos: Telefone(" + cursoSelecionado.getTel_instituicao() + ") - Site(" + cursoSelecionado.getSite_instituicao() + ").";
+        descricao = "Campus: " + cursoSelecionado.getCampus() + "\nEndereço: " + cursoSelecionado.getEndereco_campus() + "\n\nValor mensalidade: R$" + cursoSelecionado.getMensalidade() + "\n\nPeríodos:\nDiurno(" + getBoolean(cursoSelecionado.isDiurno()) + ")\nNoturno(" + getBoolean(cursoSelecionado.isNoturno()) + ")\n\nModalidades:\nPresencial(" + getBoolean(cursoSelecionado.isPresencial()) + ")\nEAD(" + getBoolean(cursoSelecionado.isEad()) + ")\nSemi-presencial(" + getBoolean(cursoSelecionado.isSemi_presencial()) + ")\n\nContatos:\nTelefone(" + cursoSelecionado.getTel_instituicao() + ")\nSite(" + cursoSelecionado.getSite_instituicao() + ").";
         textView_descricao.setText(descricao);
 
         if(cursoSelecionado.getEndereco_campus().equals("Av. Brigadeiro Luís Antônio, 846 - Bela Vista")){
